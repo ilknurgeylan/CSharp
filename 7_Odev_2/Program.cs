@@ -84,33 +84,41 @@
             int sans = a.Next(1, 101);
             Console.WriteLine("Bir sayı tahmin ediniz!");
             int tahmin = Convert.ToInt32(Console.ReadLine());
-
-            if (sans != tahmin && hak > 0)
+            if (tahmin >= 0 && tahmin <= 100)
             {
-                if (tahmin < sans)
+                if (sans != tahmin )
                 {
-                    Console.WriteLine($"Üzgünüm bilemediniz, tahmin ettiğiniz {tahmin}<{sans} ev ve kalan hakkınız {hak}");
+                    int kalanHak = 5;
+                    if (tahmin < sans)
+                    {
+
+                        Console.WriteLine($"Üzgünüm bilemediniz, tahmin ettiğiniz {tahmin}<{sans} ev ve kalan hakkınız {hak}");
+                    }
+                    else if (tahmin > sans)
+                    {
+                        Console.WriteLine($"Üzgünüm bilemediniz, tahmin ettiğiniz {sans}<{tahmin} ev ve kalan hakkınız {hak}");
+                    }
+
+                    goto basla;
+                    kalanHak -= hak;
+                    hak--;
                 }
-                else if (tahmin > sans)
+
+                else if (tahmin == sans)
                 {
-                    Console.WriteLine($"Üzgünüm bilemediniz, tahmin ettiğiniz {sans}<{tahmin} ev ve kalan hakkınız {hak}");
+                    Console.WriteLine("Tebrikleri bildiniz!Doğru sayı:" + sans);
                 }
-                hak--;
-                goto basla;
+                else if (hak == 0)
+                {
 
-            }
-            else if (tahmin == sans)
-            {
-                Console.WriteLine("Tebrikleri bildiniz!Doğru sayı:" + sans);
-            }
-            else if (hak == 0)
-            {
+                    Console.WriteLine("Üzgünüz hakkınız kalmamıştır!");
 
-                Console.WriteLine("Üzgünüz hakkınız kalmamıştır!");
-
+                }
             }
+            else { Console.WriteLine("Hatalı giriş yaptınız!"); }
             //hak düşmüyor
-            #endregion
+
+             #endregion
 
         }
     }
