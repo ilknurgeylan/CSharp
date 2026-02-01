@@ -91,36 +91,44 @@ namespace _7_Odev_2
                 hak--;
                 Random a = new Random();
                 int sans = a.Next(1, 101);
-
-                if (tahmin >= 0 && tahmin <= 100)
+                if (hak > 0)
                 {
 
-                    if (sans != tahmin)
+                    if (tahmin >= 0 && tahmin <= 100)
                     {
-                        if (tahmin < sans)
-                        {
 
-                            Console.WriteLine($"Üzgünüm bilemediniz, tahmin ettiğiniz sayı: {tahmin}\nŞanslı sayı: {sans}\n{tahmin}<{sans} ev ve kalan hakkınız {hak}");
-                        }
-                        else if (tahmin > sans)
+                        if (sans != tahmin)
                         {
+                            if (tahmin < sans)
+                            {
 
-                            Console.WriteLine($"Üzgünüm bilemediniz, tahmin ettiğiniz  sayı: {tahmin}\nŞanslı sayı: {sans}\n{sans}<{tahmin} ev ve kalan hakkınız {hak}");
+                                Console.WriteLine($"Üzgünüm bilemediniz, tahmin ettiğiniz sayı: {tahmin}\nŞanslı sayı: {sans}\n{tahmin}<{sans} ev ve kalan hakkınız {hak}");
+                            }
+                            else if (tahmin > sans)
+                            {
+
+                                Console.WriteLine($"Üzgünüm bilemediniz, tahmin ettiğiniz  sayı: {tahmin}\nŞanslı sayı: {sans}\n{sans}<{tahmin} ev ve kalan hakkınız {hak}");
+                            }
+                            goto git;
+
                         }
-                        goto git;
+
+
+                        else if (tahmin == sans)
+                        {
+                            Console.WriteLine("Tebrikleri bildiniz!Doğru sayı:" + sans);
+                        }
 
                     }
-
-
-                    else if (tahmin == sans)
-                    {
-                        Console.WriteLine("Tebrikleri bildiniz!Doğru sayı:" + sans);
-                    }
-
+                    else { Console.WriteLine("Hatalı giriş yaptınız!"); }
+                    
                 }
-                else { Console.WriteLine("Hatalı giriş yaptınız!"); }
-                //hak düşmüyor
+                else if(hak==0)
+                {
+                    Console.WriteLine("Hakkınız kalmamıştır!");
+                }
             } while (hak == 0);
+
             #endregion
 
         }

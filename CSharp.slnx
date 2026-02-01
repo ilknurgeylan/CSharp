@@ -1,6 +1,7 @@
 <Solution>
   <Project Path="09_Deneme/9_Deneme.csproj" Id="ba218a18-20db-4685-bfb6-21970f7e6ff0" />
   <Project Path="10_Deneme/10_Deneme.csproj" Id="70ad753a-489c-416f-94ac-5208dfbe007d" />
+  <Project Path="11_Deneme/11_Deneme.csproj" Id="722610f4-9321-4acc-b77b-7e50e7ce00d6" />
   <Project Path="1_Deneme/1_Deneme.csproj" />
   <Project Path="2_Deneme/2_Deneme.csproj" />
   <Project Path="3_Odev_1/3_Odev_1.csproj" />
