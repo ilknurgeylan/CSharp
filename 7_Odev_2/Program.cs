@@ -7,7 +7,24 @@ namespace _7_Odev_2
     {
         static void Main(string[] args)
         {
+            #region Ders
+            //int sayi = 0;
+            //do
+            //{
+            //    if (sayi == 5)
+            //    {
 
+
+            //        break;//Döngüyü kırma yöntemi 
+            //        Console.WriteLine(sayi);//hiçbir zaman okunmayacak.
+
+            //    }
+            //    Console.WriteLine(sayi);
+            //    sayi++;
+            //}
+            //while (true);
+            //Console.WriteLine("Merhaba");
+            #endregion
             #region Ödev
             //Kullanıcıdan alınan cinsiyet bilgisine göre
             //==> ERKEK ise
@@ -87,7 +104,6 @@ namespace _7_Odev_2
             int tahmin = Convert.ToInt32(Console.ReadLine());
             do
             {
-                Console.WriteLine(hak);
                 hak--;
                 Random a = new Random();
                 int sans = a.Next(1, 101);
@@ -102,12 +118,12 @@ namespace _7_Odev_2
                             if (tahmin < sans)
                             {
 
-                                Console.WriteLine($"Üzgünüm bilemediniz, tahmin ettiğiniz sayı: {tahmin}\nŞanslı sayı: {sans}\n{tahmin}<{sans} ev ve kalan hakkınız {hak}");
+                                Console.WriteLine($"Üzgünüm bilemediniz, tahmin ettiğiniz sayı: {tahmin}\nŞanslı sayı: {sans}\n{tahmin}<{sans} ve kalan hakkınız {hak}");
                             }
                             else if (tahmin > sans)
                             {
 
-                                Console.WriteLine($"Üzgünüm bilemediniz, tahmin ettiğiniz  sayı: {tahmin}\nŞanslı sayı: {sans}\n{sans}<{tahmin} ev ve kalan hakkınız {hak}");
+                                Console.WriteLine($"Üzgünüm bilemediniz, tahmin ettiğiniz  sayı: {tahmin}\nŞanslı sayı: {sans}\n{sans}<{tahmin} ve kalan hakkınız {hak}");
                             }
                             goto git;
 
@@ -121,13 +137,13 @@ namespace _7_Odev_2
 
                     }
                     else { Console.WriteLine("Hatalı giriş yaptınız!"); }
-                    
+
                 }
-                else if(hak==0)
+                else if (hak == 0)
                 {
                     Console.WriteLine("Hakkınız kalmamıştır!");
                 }
-            } while (hak == 0);
+            } while (hak != 0);
 
             #endregion
 
