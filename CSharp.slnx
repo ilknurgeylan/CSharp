@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="1_Deneme/1_Deneme.csproj" />
+  <Project Path="2_Deneme/2_Deneme.csproj" />
+  <Project Path="3_Odev_1/3_Odev_1.csproj" />
+  <Project Path="4_Deneme/4_Deneme.csproj" />
+  <Project Path="5_Deneme/5_Deneme.csproj" />
+  <Project Path="6_Deneme/6_Deneme.csproj" />
+  <Project Path="7_Odev_2/7_Odev_2.csproj" />
+</Solution>
