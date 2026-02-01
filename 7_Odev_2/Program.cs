@@ -1,4 +1,7 @@
-﻿namespace _7_Odev_2
+﻿using System.Globalization;
+using System.Reflection.Metadata;
+
+namespace _7_Odev_2
 {
     internal class Program
     {
@@ -78,47 +81,47 @@
             //Örneğin oluşturulan random sayı değeri 50 kullanıcı 25 girdi girdiğiniz sayı oluşturulan sayıdan küçüktür
             // uyarısı verilip kullanıcı yönlendirilecek  kullanıcı 75 girdi girilen sayı büyüktür deyip yönlendirilecek
             //eğer sayılar birbirine eşitse şanslı sayıyı buldunuz diyecek ve 5 hakta bu işlemi yapacak.
-            Random a = new Random();
-        basla:
             int hak = 5;
-            int sans = a.Next(1, 101);
+        git:
             Console.WriteLine("Bir sayı tahmin ediniz!");
             int tahmin = Convert.ToInt32(Console.ReadLine());
-            if (tahmin >= 0 && tahmin <= 100)
+            do
             {
-                if (sans != tahmin )
+                Console.WriteLine(hak);
+                hak--;
+                Random a = new Random();
+                int sans = a.Next(1, 101);
+
+                if (tahmin >= 0 && tahmin <= 100)
                 {
-                    int kalanHak = 5;
-                    if (tahmin < sans)
+
+                    if (sans != tahmin)
                     {
+                        if (tahmin < sans)
+                        {
 
-                        Console.WriteLine($"Üzgünüm bilemediniz, tahmin ettiğiniz {tahmin}<{sans} ev ve kalan hakkınız {hak}");
+                            Console.WriteLine($"Üzgünüm bilemediniz, tahmin ettiğiniz sayı: {tahmin}\nŞanslı sayı: {sans}\n{tahmin}<{sans} ev ve kalan hakkınız {hak}");
+                        }
+                        else if (tahmin > sans)
+                        {
+
+                            Console.WriteLine($"Üzgünüm bilemediniz, tahmin ettiğiniz  sayı: {tahmin}\nŞanslı sayı: {sans}\n{sans}<{tahmin} ev ve kalan hakkınız {hak}");
+                        }
+                        goto git;
+
                     }
-                    else if (tahmin > sans)
+
+
+                    else if (tahmin == sans)
                     {
-                        Console.WriteLine($"Üzgünüm bilemediniz, tahmin ettiğiniz {sans}<{tahmin} ev ve kalan hakkınız {hak}");
+                        Console.WriteLine("Tebrikleri bildiniz!Doğru sayı:" + sans);
                     }
 
-                    goto basla;
-                    kalanHak -= hak;
-                    hak--;
                 }
-
-                else if (tahmin == sans)
-                {
-                    Console.WriteLine("Tebrikleri bildiniz!Doğru sayı:" + sans);
-                }
-                else if (hak == 0)
-                {
-
-                    Console.WriteLine("Üzgünüz hakkınız kalmamıştır!");
-
-                }
-            }
-            else { Console.WriteLine("Hatalı giriş yaptınız!"); }
-            //hak düşmüyor
-
-             #endregion
+                else { Console.WriteLine("Hatalı giriş yaptınız!"); }
+                //hak düşmüyor
+            } while (hak == 0);
+            #endregion
 
         }
     }

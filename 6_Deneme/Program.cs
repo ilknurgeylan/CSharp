@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-
+            #region
 
             //Console.WriteLine("**********Eksik Listesi******");
             //Console.WriteLine("Eksik olan ürün nedir?");
@@ -20,7 +20,7 @@
             //        Console.WriteLine("Tanımsız giriş yapıldı!");
             //        break;
             //}
-#endregion
+            #endregion
             #region Kurs Örnek
             //Console.WriteLine("*******Kasiyer çalışma prensibi*******");
             //Console.WriteLine("Yapmak istediğiniz işlemi belirtin");
